@@ -58,11 +58,11 @@ func withTemplate(extra ...string) map[string]bool {
 var kitExpected = map[string]map[string]bool{
 	"A":     withTemplate("acc_number_required"),
 	"B":     withTemplate("acc_number_required", "insufficient_balance"),
-	"C":     withTemplate("acc_number_required", "requisites_changed", "hidden_instruction"),
-	"D":     withTemplate("acc_number_required", "over_remaining"),
-	"E":     withTemplate("acc_number_required", "beneficiary_name_mismatch", "iban_checksum"),
+	"C":     withTemplate("requisites_changed", "hidden_instruction"),
+	"D":     withTemplate("over_remaining"),
+	"E":     withTemplate("beneficiary_name_mismatch", "iban_checksum"),
 	"raw":   withTemplate("acc_number_required", "placeholder"),
-	"fixed": set("acc_number_required"),
+	"fixed": set(),
 }
 
 func TestKitsExpectedRules(t *testing.T) {

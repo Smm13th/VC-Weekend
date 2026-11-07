@@ -1,0 +1,145 @@
+[
+  {
+    "id": "A",
+    "title": "Чистый путь",
+    "description": "Договор AI-DXB-2026/014 на 51 000 USD и инвойс GHM-INV-0412 на ту же сумму, предоплата. Учётного номера нет, в шаблоне договора заложены все 8 дефектов.",
+    "files": [
+      "A/contract.docx",
+      "A/invoice.pdf"
+    ],
+    "payments": [],
+    "accountingNumber": null,
+    "expected": [
+      "acc_number_required",
+      "bilingual_length_ratio",
+      "payment_term_missing",
+      "fees_not_specified",
+      "clause_air_waybill",
+      "clause_consent_party",
+      "bilingual_numbering_gap",
+      "clause_duplicate",
+      "clause_cross_reference"
+    ]
+  },
+  {
+    "id": "B",
+    "title": "Нет учётного номера",
+    "description": "Договор в евро на 48 000 EUR выглядит ниже порога, но в эквиваленте больше 50 000 USD. Инвойс в DOCX через банк-посредник. Счёта в евро у клиента нет, нужна конвертация.",
+    "files": [
+      "B/contract.docx",
+      "B/invoice.docx"
+    ],
+    "payments": [],
+    "accountingNumber": null,
+    "expected": [
+      "acc_number_required",
+      "insufficient_balance",
+      "bilingual_length_ratio",
+      "payment_term_missing",
+      "fees_not_specified",
+      "clause_air_waybill",
+      "clause_consent_party",
+      "bilingual_numbering_gap",
+      "clause_duplicate",
+      "clause_cross_reference"
+    ]
+  },
+  {
+    "id": "C",
+    "title": "Подмена реквизитов",
+    "description": "Инвойс GHM-INV-0431 с реквизитами другого банка (Грузия) и письмо о смене банка со скрытой строкой для помощника. Учётный номер задан.",
+    "files": [
+      "C/contract.docx",
+      "C/invoice.pdf",
+      "C/letter.pdf"
+    ],
+    "payments": [],
+    "accountingNumber": "02/2026/00731",
+    "expected": [
+      "requisites_changed",
+      "hidden_instruction",
+      "bilingual_length_ratio",
+      "payment_term_missing",
+      "fees_not_specified",
+      "clause_air_waybill",
+      "clause_consent_party",
+      "bilingual_numbering_gap",
+      "clause_duplicate",
+      "clause_cross_reference"
+    ]
+  },
+  {
+    "id": "D",
+    "title": "Превышение остатка",
+    "description": "По договору уже заплачено 30 000 USD, новый инвойс на 25 000 USD больше остатка 21 000.",
+    "files": [
+      "D/contract.docx",
+      "D/invoice.pdf"
+    ],
+    "payments": [
+      {
+        "date": "2026-10-05",
+        "amount": 30000,
+        "currency": "USD",
+        "ref": "Invoice GHM-INV-0398"
+      }
+    ],
+    "accountingNumber": "02/2026/00731",
+    "expected": [
+      "over_remaining",
+      "bilingual_length_ratio",
+      "payment_term_missing",
+      "fees_not_specified",
+      "clause_air_waybill",
+      "clause_consent_party",
+      "bilingual_numbering_gap",
+      "clause_duplicate",
+      "clause_cross_reference"
+    ]
+  },
+  {
+    "id": "E",
+    "title": "Другое имя и опечатка",
+    "description": "В инвойсе получатель назван иначе, чем в договоре, и в IBAN переставлены две последние цифры.",
+    "files": [
+      "E/contract.docx",
+      "E/invoice.pdf"
+    ],
+    "payments": [],
+    "accountingNumber": "02/2026/00731",
+    "expected": [
+      "beneficiary_name_mismatch",
+      "iban_checksum",
+      "bilingual_length_ratio",
+      "payment_term_missing",
+      "fees_not_specified",
+      "clause_air_waybill",
+      "clause_consent_party",
+      "bilingual_numbering_gap",
+      "clause_duplicate",
+      "clause_cross_reference"
+    ]
+  },
+  {
+    "id": "raw",
+    "title": "Сырой шаблон",
+    "description": "Только пустой шаблон договора с заготовками в квадратных скобках вместо данных.",
+    "files": [
+      "raw/contract.docx"
+    ],
+    "payments": [],
+    "accountingNumber": null,
+    "expected": [
+      "acc_number_required",
+      "placeholder",
+      "bilingual_length_ratio",
+      "payment_term_missing",
+      "fees_not_specified",
+      "clause_air_waybill",
+      "clause_consent_party",
+      "bilingual_numbering_gap",
+      "clause_duplicate",
+      "clause_cross_reference"
+    ]
+  }
+]

@@ -269,7 +269,13 @@ func CheckPayment(c model.CaseInput) model.PaymentReport {
 	}
 	findings := []model.Finding{}
 	if contract != nil {
-		findings = append(findings, checkContract(contract, cExt).Findings...)
+		for _, f := range checkContract(contract, cExt).Findings {
+			// Учётный номер уже получен: напоминание стадии договора больше не нужно, остаётся зелёная отметка стадии заявки.
+			if f.Rule == "acc_number_required" && strings.TrimSpace(c.AccountingNumber) != "" {
+				continue
+			}
+			findings = append(findings, f)
+		}
 	}
 	summary := contractSummary(cExt, c.Payments)
 	refIBAN := ""

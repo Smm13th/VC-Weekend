@@ -1,0 +1,801 @@
+{
+  "cases": [
+    {
+      "id": "e01",
+      "title": "Шаблон со всеми 8 дефектами, договор на 54 000 USD, учётного номера нет (ждём красный учётный номер)",
+      "files": [
+        "e01/contract.docx",
+        "e01/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "acc_number_required",
+        "bilingual_length_ratio",
+        "bilingual_numbering_gap",
+        "clause_air_waybill",
+        "clause_consent_party",
+        "clause_cross_reference",
+        "clause_duplicate",
+        "fees_not_specified",
+        "payment_term_missing"
+      ],
+      "expectedFields": {
+        "e01/contract.docx": {
+          "contractNo": "AI-DXB-2026/017",
+          "contractDate": "2026-09-22",
+          "expiryDate": "2026-12-31",
+          "currency": "USD",
+          "totalAmount": 54000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e01/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0418",
+          "invoiceDate": "2026-10-05",
+          "invoiceAmount": 54000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e02",
+      "title": "Чистый: исправленный договор, продавец 2 из Дубая, инвойс в DOCX с оплатой после отгрузки",
+      "files": [
+        "e02/contract.docx",
+        "e02/invoice.docx"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "postpay"
+      },
+      "form": {},
+      "expectedRules": [],
+      "expectedFields": {
+        "e02/contract.docx": {
+          "contractNo": "AI-DXB-2026/027",
+          "contractDate": "2026-10-05",
+          "expiryDate": "2027-06-30",
+          "currency": "USD",
+          "totalAmount": 28000,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e02/invoice.docx": {
+          "invoiceNo": "DCI-0291",
+          "invoiceDate": "2026-10-30",
+          "invoiceAmount": 28000,
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e03",
+      "title": "Чистый: часть договора уже оплачена, инвойс ровно на остаток 33 000 USD",
+      "files": [
+        "e03/contract.docx",
+        "e03/invoice.pdf"
+      ],
+      "payments": [
+        {
+          "date": "2026-09-10",
+          "amount": 12000,
+          "currency": "USD",
+          "ref": "Invoice GHM-INV-0371"
+        }
+      ],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [],
+      "expectedFields": {
+        "e03/contract.docx": {
+          "contractNo": "AI-DXB-2026/009",
+          "contractDate": "2026-08-18",
+          "expiryDate": "2027-08-17",
+          "currency": "USD",
+          "totalAmount": 45000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e03/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0436",
+          "invoiceDate": "2026-10-26",
+          "invoiceAmount": 33000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e04",
+      "title": "Чистый: договор на 49 900 USD, чуть ниже порога учётного номера",
+      "files": [
+        "e04/contract.docx",
+        "e04/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [],
+      "expectedFields": {
+        "e04/contract.docx": {
+          "contractNo": "AI-DXB-2026/031",
+          "contractDate": "2026-10-12",
+          "expiryDate": "2027-10-11",
+          "currency": "USD",
+          "totalAmount": 49900,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e04/invoice.pdf": {
+          "invoiceNo": "DCI-0305",
+          "invoiceDate": "2026-10-22",
+          "invoiceAmount": 49900,
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e05",
+      "title": "Договор в евро, у цифр в русской и английской колонках расхождение (40 000 и 42 000), счёта в евро нет",
+      "files": [
+        "e05/contract.docx",
+        "e05/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "bilingual_number_mismatch",
+        "insufficient_balance"
+      ],
+      "expectedFields": {
+        "e05/contract.docx": {
+          "contractNo": "AI-HAM-2026/009",
+          "contractDate": "2026-10-06",
+          "expiryDate": "2027-10-05",
+          "currency": "EUR",
+          "totalAmount": 40000,
+          "sellerName": "Nordlicht Werkzeugmaschinen GmbH",
+          "sellerIban": "DE34200505501234567890",
+          "sellerSwift": "EHBKDEHH"
+        },
+        "e05/invoice.pdf": {
+          "invoiceNo": "NWM-2026-118",
+          "invoiceDate": "2026-10-29",
+          "invoiceAmount": 40000,
+          "sellerIban": "DE34200505501234567890",
+          "sellerSwift": "EHBKDEHH"
+        }
+      }
+    },
+    {
+      "id": "e06",
+      "title": "Подмена реквизитов: инвойс с грузинским банком и письмо со скрытой инструкцией для помощника",
+      "files": [
+        "e06/contract.docx",
+        "e06/invoice.pdf",
+        "e06/letter.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "hidden_instruction",
+        "requisites_changed"
+      ],
+      "expectedFields": {
+        "e06/contract.docx": {
+          "contractNo": "AI-DXB-2026/022",
+          "contractDate": "2026-09-29",
+          "expiryDate": "2027-09-28",
+          "currency": "USD",
+          "totalAmount": 38000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e06/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0441",
+          "invoiceDate": "2026-10-28",
+          "invoiceAmount": 38000,
+          "sellerIban": "GE47KV0000000483920175",
+          "sellerSwift": "KVRTGE22"
+        },
+        "e06/letter.pdf": {
+          "sellerIban": "GE47KV0000000483920175",
+          "sellerSwift": "KVRTGE22"
+        }
+      }
+    },
+    {
+      "id": "e07",
+      "title": "Остаток по договору 10 000 USD, инвойс на 14 500 USD",
+      "files": [
+        "e07/contract.docx",
+        "e07/invoice.pdf"
+      ],
+      "payments": [
+        {
+          "date": "2026-09-20",
+          "amount": 22000,
+          "currency": "USD",
+          "ref": "Invoice GHM-INV-0380"
+        },
+        {
+          "date": "2026-10-14",
+          "amount": 8000,
+          "currency": "USD",
+          "ref": "Invoice GHM-INV-0412"
+        }
+      ],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "over_remaining"
+      ],
+      "expectedFields": {
+        "e07/contract.docx": {
+          "contractNo": "AI-DXB-2026/012",
+          "contractDate": "2026-08-25",
+          "expiryDate": "2027-08-24",
+          "currency": "USD",
+          "totalAmount": 40000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e07/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0439",
+          "invoiceDate": "2026-10-27",
+          "invoiceAmount": 14500,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e08",
+      "title": "Договор истёк 31.10.2026 и автопродления в нём нет (красное)",
+      "files": [
+        "e08/contract.docx",
+        "e08/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "contract_expired"
+      ],
+      "expectedFields": {
+        "e08/contract.docx": {
+          "contractNo": "AI-DXB-2026/006",
+          "contractDate": "2026-03-10",
+          "expiryDate": "2026-10-31",
+          "currency": "USD",
+          "totalAmount": 31500,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e08/invoice.pdf": {
+          "invoiceNo": "DCI-0312",
+          "invoiceDate": "2026-11-02",
+          "invoiceAmount": 31500,
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e09",
+      "title": "Договор формально истёк 31.10.2026, но продлевается сам (жёлтое), плюс два дефекта шаблона по флагам",
+      "files": [
+        "e09/contract.docx",
+        "e09/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "clause_air_waybill",
+        "contract_expired",
+        "fees_not_specified"
+      ],
+      "expectedFields": {
+        "e09/contract.docx": {
+          "contractNo": "AI-DXB-2025/031",
+          "contractDate": "2025-11-03",
+          "expiryDate": "2026-10-31",
+          "currency": "USD",
+          "totalAmount": 42000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e09/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0445",
+          "invoiceDate": "2026-10-30",
+          "invoiceAmount": 42000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e10",
+      "title": "SWIFT из Германии при IBAN из ОАЭ, одинаково в договоре и инвойсе",
+      "files": [
+        "e10/contract.docx",
+        "e10/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "swift_iban_country"
+      ],
+      "expectedFields": {
+        "e10/contract.docx": {
+          "contractNo": "AI-DXB-2026/025",
+          "contractDate": "2026-10-01",
+          "expiryDate": "2027-09-30",
+          "currency": "USD",
+          "totalAmount": 36000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "EHBKDEHH"
+        },
+        "e10/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0447",
+          "invoiceDate": "2026-10-31",
+          "invoiceAmount": 36000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "EHBKDEHH"
+        }
+      }
+    },
+    {
+      "id": "e11",
+      "title": "SWIFT с цифрой вместо буквы (DP8LAEAD), одинаково в договоре и инвойсе; в договоре нет 12.6",
+      "files": [
+        "e11/contract.docx",
+        "e11/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "bilingual_numbering_gap",
+        "swift_format"
+      ],
+      "expectedFields": {
+        "e11/contract.docx": {
+          "contractNo": "AI-DXB-2026/026",
+          "contractDate": "2026-10-02",
+          "expiryDate": "2027-10-01",
+          "currency": "USD",
+          "totalAmount": 29500,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DP8LAEAD"
+        },
+        "e11/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0449",
+          "invoiceDate": "2026-11-02",
+          "invoiceAmount": 29500,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DP8LAEAD"
+        }
+      }
+    },
+    {
+      "id": "e12",
+      "title": "IBAN ОАЭ из 22 символов вместо 23, одинаково в договоре и инвойсе",
+      "files": [
+        "e12/contract.docx",
+        "e12/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "iban_format"
+      ],
+      "expectedFields": {
+        "e12/contract.docx": {
+          "contractNo": "AI-DXB-2026/029",
+          "contractDate": "2026-10-09",
+          "expiryDate": "2027-10-08",
+          "currency": "USD",
+          "totalAmount": 24000,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE86033033100223344556",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e12/invoice.pdf": {
+          "invoiceNo": "DCI-0299",
+          "invoiceDate": "2026-11-03",
+          "invoiceAmount": 24000,
+          "sellerIban": "AE86033033100223344556",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e13",
+      "title": "Опечатка в IBAN инвойса: переставлены цифры, контрольная сумма не сходится",
+      "files": [
+        "e13/contract.docx",
+        "e13/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "iban_checksum"
+      ],
+      "expectedFields": {
+        "e13/contract.docx": {
+          "contractNo": "AI-DXB-2026/028",
+          "contractDate": "2026-10-07",
+          "expiryDate": "2027-10-06",
+          "currency": "USD",
+          "totalAmount": 22000,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e13/invoice.pdf": {
+          "invoiceNo": "DCI-0297",
+          "invoiceDate": "2026-11-02",
+          "invoiceAmount": 22000,
+          "sellerIban": "AE860330331002233445656",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e14",
+      "title": "Получатель в инвойсе назван Dune Crest Trading FZCO; в договоре дефекты 4.2 и 4.3 (срок оплаты и повтор)",
+      "files": [
+        "e14/contract.docx",
+        "e14/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "beneficiary_name_mismatch",
+        "clause_duplicate",
+        "payment_term_missing"
+      ],
+      "expectedFields": {
+        "e14/contract.docx": {
+          "contractNo": "AI-DXB-2026/024",
+          "contractDate": "2026-09-30",
+          "expiryDate": "2027-09-29",
+          "currency": "USD",
+          "totalAmount": 26000,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e14/invoice.pdf": {
+          "invoiceNo": "DCI-0293",
+          "invoiceDate": "2026-10-31",
+          "invoiceAmount": 26000,
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e15",
+      "title": "Сырой шаблон договора с заготовками в скобках, инвойса нет",
+      "files": [
+        "e15/contract.docx"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "acc_number_required",
+        "bilingual_length_ratio",
+        "bilingual_numbering_gap",
+        "clause_air_waybill",
+        "clause_consent_party",
+        "clause_cross_reference",
+        "clause_duplicate",
+        "fees_not_specified",
+        "payment_term_missing",
+        "placeholder"
+      ],
+      "expectedFields": {
+        "e15/contract.docx": {
+          "currency": "USD",
+          "totalAmount": 51000
+        }
+      }
+    },
+    {
+      "id": "e16",
+      "title": "Инвойс на 58 000 USD больше всего договора на 51 000 USD, учётный номер задан",
+      "files": [
+        "e16/contract.docx",
+        "e16/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "02/2026/00812",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "amount_exceeds_contract",
+        "over_remaining"
+      ],
+      "expectedFields": {
+        "e16/contract.docx": {
+          "contractNo": "AI-DXB-2026/018",
+          "contractDate": "2026-09-24",
+          "expiryDate": "2027-09-23",
+          "currency": "USD",
+          "totalAmount": 51000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e16/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0451",
+          "invoiceDate": "2026-11-03",
+          "invoiceAmount": 58000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e17",
+      "title": "Договор в долларах, инвойс выставлен в евро; в договоре два дефекта (согласие и ссылка 11.1 d)",
+      "files": [
+        "e17/contract.docx",
+        "e17/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "clause_consent_party",
+        "clause_cross_reference",
+        "currency_mismatch",
+        "insufficient_balance"
+      ],
+      "expectedFields": {
+        "e17/contract.docx": {
+          "contractNo": "AI-DXB-2026/019",
+          "contractDate": "2026-10-03",
+          "expiryDate": "2027-10-02",
+          "currency": "USD",
+          "totalAmount": 47000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e17/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0453",
+          "invoiceDate": "2026-11-04",
+          "invoiceAmount": 40000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e18",
+      "title": "Инвойс от 01.10.2026 раньше договора от 15.10.2026 и ссылается на другой договор",
+      "files": [
+        "e18/contract.docx",
+        "e18/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "invoice_before_contract",
+        "invoice_contract_ref"
+      ],
+      "expectedFields": {
+        "e18/contract.docx": {
+          "contractNo": "AI-DXB-2026/033",
+          "contractDate": "2026-10-15",
+          "expiryDate": "2027-10-14",
+          "currency": "USD",
+          "totalAmount": 30000,
+          "sellerName": "Dune Crest Industrial Supplies FZCO",
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        },
+        "e18/invoice.pdf": {
+          "invoiceNo": "DCI-0288",
+          "invoiceDate": "2026-10-01",
+          "invoiceAmount": 30000,
+          "sellerIban": "AE860330331002233445566",
+          "sellerSwift": "CBCMAEAD"
+        }
+      }
+    },
+    {
+      "id": "e19",
+      "title": "Инвойс на 80 000 USD больше долларового счёта 64 300 USD, договор на 120 000 USD, учётный номер задан",
+      "files": [
+        "e19/contract.docx",
+        "e19/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "02/2026/00774",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {},
+      "expectedRules": [
+        "insufficient_balance"
+      ],
+      "expectedFields": {
+        "e19/contract.docx": {
+          "contractNo": "AI-DXB-2026/015",
+          "contractDate": "2026-09-30",
+          "expiryDate": "2027-09-29",
+          "currency": "USD",
+          "totalAmount": 120000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e19/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0452",
+          "invoiceDate": "2026-11-03",
+          "invoiceAmount": 80000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    },
+    {
+      "id": "e20",
+      "title": "Назначение платежа написано по-русски и длиннее 140 символов",
+      "files": [
+        "e20/contract.docx",
+        "e20/invoice.pdf"
+      ],
+      "payments": [],
+      "accountingNumber": "",
+      "valueDate": "2026-11-09",
+      "today": "2026-11-07",
+      "task": {
+        "timing": "prepay"
+      },
+      "form": {
+        "purpose": "Оплата за промышленное оборудование по инвойсу GHM-INV-0477 от 03.11.2026 по договору AI-DXB-2026/033 от 01.10.2026, предоплата 100 процентов, поставка на условиях CPT Алматы, без НДС"
+      },
+      "expectedRules": [
+        "purpose_latin",
+        "purpose_length"
+      ],
+      "expectedFields": {
+        "e20/contract.docx": {
+          "contractNo": "AI-DXB-2026/033",
+          "contractDate": "2026-10-01",
+          "expiryDate": "2027-09-30",
+          "currency": "USD",
+          "totalAmount": 36000,
+          "sellerName": "Gulf Horizon Machinery FZE",
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        },
+        "e20/invoice.pdf": {
+          "invoiceNo": "GHM-INV-0477",
+          "invoiceDate": "2026-11-03",
+          "invoiceAmount": 36000,
+          "sellerIban": "AE980710123456789012345",
+          "sellerSwift": "DPBLAEAD"
+        }
+      }
+    }
+  ]
+}

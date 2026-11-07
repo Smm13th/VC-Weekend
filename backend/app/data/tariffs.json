@@ -1,0 +1,12 @@
+{
+  "note": "Синтетические тарифы для симулятора комиссий. Реальные тарифы банка могут отличаться.",
+  "senderFee": { "pct": 0.2, "min": { "USD": 15, "EUR": 15 }, "max": { "USD": 150, "EUR": 140 } },
+  "ourGuaranteeFee": { "USD": 30, "EUR": 30 },
+  "intermediaryFee": { "USD": 25, "EUR": 20 },
+  "beneficiaryBankFee": { "USD": 15, "EUR": 15 },
+  "urgentFeeKzt": 5000,
+  "bonusMaxSharePct": 30,
+  "cutoff": { "USD": { "time": "15:00", "standardDays": 1, "urgentDays": 0 }, "EUR": { "time": "14:00", "standardDays": 1, "urgentDays": 0 } },
+  "accountingNumberThresholdUsd": 50000,
+  "accountingNumberMentorCheck": true
+}

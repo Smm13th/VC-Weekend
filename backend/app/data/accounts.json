@@ -1,0 +1,21 @@
+{
+  "client": {
+    "name": "ТОО «Алатау Индастриал»",
+    "nameEn": "Alatau Industrial LLP",
+    "bin": "190440012345",
+    "address": "Республика Казахстан, 050040, г. Алматы, пр. Аль-Фараби, 77/8, офис 412",
+    "addressEn": "77/8 Al-Farabi Ave., office 412, Almaty 050040, Republic of Kazakhstan",
+    "director": "Сейткали Нурлан Ерланович",
+    "directorEn": "Nurlan Seitkali",
+    "accountant": "Жумабаева Айгерим Маратовна",
+    "bankBic": "KCJBKZKX",
+    "bankName": "банк клиента (BCC Business)"
+  },
+  "accounts": [
+    { "id": "acc-usd", "iban": "KZ499980010000412577", "currency": "USD", "balance": 64300.00, "title": "Текущий счёт в долларах США" },
+    { "id": "acc-kzt", "iban": "KZ239980010000412560", "currency": "KZT", "balance": 41250000.00, "title": "Текущий счёт в тенге" },
+    { "id": "acc-cny", "iban": "KZ599980010000412591", "currency": "CNY", "balance": 120000.00, "title": "Текущий счёт в юанях" },
+    { "id": "acc-rub", "iban": "KZ969980010000412604", "currency": "RUB", "balance": 1500000.00, "title": "Текущий счёт в рублях" }
+  ],
+  "bonuses": 18500
+}

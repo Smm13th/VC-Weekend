@@ -1,0 +1,10 @@
+{
+  "note": "Вымышленные банки для прототипа. Совпадения с реальными организациями случайны.",
+  "items": [
+    { "swift": "DPBLAEAD", "name": "Desert Pearl Bank PJSC", "city": "Dubai", "country": "AE", "address": "Jebel Ali Free Zone, Gate 5, Dubai, UAE" },
+    { "swift": "CBCMAEAD", "name": "Coral Bay Commercial Bank", "city": "Dubai", "country": "AE", "address": "Al Maktoum Rd 18, Deira, Dubai, UAE" },
+    { "swift": "KVRTGE22", "name": "Kavkaz Trade Bank JSC", "city": "Tbilisi", "country": "GE", "address": "12 Rustaveli Ave., Tbilisi, Georgia" },
+    { "swift": "NHTRUS33", "name": "Northern Harbor Trust Company", "city": "New York", "country": "US", "address": "200 Water St., New York, NY, USA", "role": "intermediary", "currencies": ["USD"] },
+    { "swift": "RHNBDEFF", "name": "Rhein Nord Bank AG", "city": "Frankfurt am Main", "country": "DE", "address": "Mainzer Landstr. 41, Frankfurt am Main, Germany", "role": "intermediary", "currencies": ["EUR"] }
+  ]
+}

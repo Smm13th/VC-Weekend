@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+/* Палитра: тёплая бумага, графит, один акцент (глубокий сине-зелёный). Светофор только для статусов. */
+@theme {
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: #F4F2EE;
+  --color-surface: #FFFFFF;
+  --color-sunken: #EEEBE5;
+  --color-line: #DCD8D0;
+  --color-line-strong: #C4BFB4;
+  --color-ink: #1D232B;
+  --color-ink-2: #48515C;
+  --color-ink-3: #77808A;
+
+  --color-accent: #174E4A;
+  --color-accent-hover: #0F3B38;
+  --color-accent-soft: #E3EDEB;
+
+  --color-ok: #2F6B3A;
+  --color-ok-soft: #E6F0E6;
+  --color-warn: #8A5A00;
+  --color-warn-soft: #FBF0D9;
+  --color-bad: #A3261B;
+  --color-bad-soft: #F8E3E0;
+
+  --color-mark: #FFE9A8;
+  --color-mark-strong: #FFD460;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+.mono { font-family: var(--font-mono); font-size: 0.95em; letter-spacing: 0.01em; }
+.tabular { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+mark.src-mark { background: var(--color-mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+mark.src-mark.active { background: var(--color-mark-strong); box-shadow: 0 0 0 1px #C99A1C; }
+::selection { background: #CFE0DC; }

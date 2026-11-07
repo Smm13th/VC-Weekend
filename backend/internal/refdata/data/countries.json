@@ -1,0 +1,12 @@
+[
+  { "code": "KZ", "name": "Казахстан", "nameEn": "Kazakhstan", "ibanLength": 20, "currency": "KZT" },
+  { "code": "AE", "name": "Объединённые Арабские Эмираты", "nameEn": "United Arab Emirates", "ibanLength": 23, "currency": "AED" },
+  { "code": "GE", "name": "Грузия", "nameEn": "Georgia", "ibanLength": 22, "currency": "GEL" },
+  { "code": "TR", "name": "Турция", "nameEn": "Turkey", "ibanLength": 26, "currency": "TRY" },
+  { "code": "DE", "name": "Германия", "nameEn": "Germany", "ibanLength": 22, "currency": "EUR" },
+  { "code": "GB", "name": "Великобритания", "nameEn": "United Kingdom", "ibanLength": 22, "currency": "GBP" },
+  { "code": "CN", "name": "Китай", "nameEn": "China", "ibanLength": null, "currency": "CNY" },
+  { "code": "US", "name": "США", "nameEn": "United States", "ibanLength": null, "currency": "USD" },
+  { "code": "RU", "name": "Россия", "nameEn": "Russia", "ibanLength": null, "currency": "RUB" },
+  { "code": "UZ", "name": "Узбекистан", "nameEn": "Uzbekistan", "ibanLength": null, "currency": "UZS" }
+]
